@@ -1,0 +1,477 @@
+/* Contenedor principal con fondo blanco */
+.login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+  padding: 20px;
+}
+
+/* Círculos azules en movimiento aleatorio - MÁS NOTABLES */
+.floating-circles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(102, 126, 234, 0.4) 0%,
+    rgba(102, 126, 234, 0.25) 50%,
+    rgba(102, 126, 234, 0.1) 100%
+  );
+  border: 2px solid rgba(102, 126, 234, 0.5);
+  animation: floatCircle 25s infinite ease-in-out;
+  box-shadow: 
+    0 10px 30px rgba(102, 126, 234, 0.25),
+    inset 0 0 30px rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+}
+
+/* Círculo 1 */
+.circle:nth-child(1) {
+  width: 200px;
+  height: 200px;
+  top: 10%;
+  left: 5%;
+  animation-delay: 0s;
+  animation-duration: 30s;
+}
+
+/* Círculo 2 */
+.circle:nth-child(2) {
+  width: 140px;
+  height: 140px;
+  top: 70%;
+  left: 80%;
+  animation-delay: 5s;
+  animation-duration: 25s;
+}
+
+/* Círculo 3 */
+.circle:nth-child(3) {
+  width: 250px;
+  height: 250px;
+  top: 40%;
+  left: 85%;
+  animation-delay: 10s;
+  animation-duration: 35s;
+}
+
+/* Círculo 4 */
+.circle:nth-child(4) {
+  width: 110px;
+  height: 110px;
+  top: 80%;
+  left: 15%;
+  animation-delay: 15s;
+  animation-duration: 20s;
+}
+
+/* Círculo 5 */
+.circle:nth-child(5) {
+  width: 170px;
+  height: 170px;
+  top: 20%;
+  left: 60%;
+  animation-delay: 7s;
+  animation-duration: 28s;
+}
+
+/* Círculo 6 */
+.circle:nth-child(6) {
+  width: 220px;
+  height: 220px;
+  top: 60%;
+  left: 40%;
+  animation-delay: 12s;
+  animation-duration: 32s;
+}
+
+/* Animación más pronunciada */
+@keyframes floatCircle {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    opacity: 0.8;
+  }
+  25% {
+    transform: translate(120px, 80px) rotate(90deg) scale(1.1);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(60px, 150px) rotate(180deg) scale(0.9);
+    opacity: 0.9;
+  }
+  75% {
+    transform: translate(-80px, 100px) rotate(270deg) scale(1.05);
+    opacity: 0.95;
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg) scale(1);
+    opacity: 0.8;
+  }
+}
+
+/* Efecto de pulso adicional para algunos círculos */
+.circle:nth-child(1),
+.circle:nth-child(3),
+.circle:nth-child(6) {
+  animation: floatCircle 25s infinite ease-in-out, circlePulse 8s infinite ease-in-out;
+}
+
+@keyframes circlePulse {
+  0%, 100% {
+    box-shadow: 
+      0 10px 30px rgba(102, 126, 234, 0.25),
+      inset 0 0 30px rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    box-shadow: 
+      0 15px 40px rgba(102, 126, 234, 0.4),
+      inset 0 0 40px rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* Layout de dos columnas */
+.login-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  max-width: 1000px;
+  min-height: 500px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 
+    0 8px 30px rgba(0, 0, 0, 0.12),
+    0 0 0 1px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+}
+
+/* Sección del logo (izquierda) CON TRANSPARENCIA */
+.logo-section {
+  background: linear-gradient(
+    135deg, 
+    rgba(102, 126, 234, 0.85) 0%, 
+    rgba(118, 75, 162, 0.80) 100%
+  );
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 2rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Efecto de vidrio esmerilado */
+.logo-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+  opacity: 0.3;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+/* Efecto de pulso sutil */
+.logo-pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  animation: pulse 4s ease-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Estilos para el logo SVG */
+.logo-image {
+  width: 280px;
+  height: auto;
+  position: relative;
+  z-index: 4;
+  filter: 
+    drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2))
+    drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  transition: all 0.3s ease;
+}
+
+/* Efecto sutil al pasar el mouse (opcional) */
+.logo-image:hover {
+  filter: 
+    drop-shadow(0 6px 12px rgba(0, 0, 0, 0.25))
+    drop-shadow(0 3px 6px rgba(0, 0, 0, 0.15));
+}
+
+/* Sección del formulario (derecha) - SIN TRANSPARENCIA */
+.form-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+  background: white;
+  position: relative;
+}
+
+/* Efecto de borde sutil entre secciones */
+.form-section::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  bottom: 20px;
+  left: 0;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    #e2e8f0,
+    transparent
+  );
+}
+
+.login-card {
+  width: 100%;
+  max-width: 320px;
+}
+
+/* Welcome Section */
+.welcome-section {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.welcome-section h2 {
+  font-size: 1.5rem;
+  color: #2d3748;
+  margin: 0;
+  font-weight: 600;
+}
+
+/* Form Styles */
+.login-form {
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #4a5568;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.9rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  background: #fafafa;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #667eea;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-input::placeholder {
+  color: #a0aec0;
+}
+
+/* Divider */
+.divider {
+  margin: 2rem 0;
+}
+
+.divider-line {
+  display: block;
+  height: 1px;
+  background: #e2e8f0;
+}
+
+/* Login Button */
+.login-btn {
+  width: 100%;
+  padding: 0.9rem;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 1.5rem;
+}
+
+.login-btn:hover:not(:disabled) {
+  background: #5a67d8;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.login-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Register Section */
+.register-section {
+  font-size: 0.9rem;
+  color: #718096;
+  text-align: center;
+}
+
+.register-link {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.register-link:hover {
+  color: #5a67d8;
+  text-decoration: underline;
+}
+
+/* Error Message */
+.error-message {
+  background: #fff5f5;
+  color: #c53030;
+  padding: 0.75rem;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  border: 1px solid #fed7d7;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .login-layout {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    max-width: 400px;
+  }
+  
+  .logo-section {
+    padding: 2rem;
+    min-height: 200px;
+    backdrop-filter: blur(5px);
+  }
+  
+  .logo-image {
+    width: 200px;
+  }
+  
+  .form-section {
+    padding: 2rem 1.5rem;
+  }
+  
+  .form-section::before {
+    display: none;
+  }
+  
+  /* Ajustar círculos para mobile */
+  .circle {
+    width: 120px !important;
+    height: 120px !important;
+  }
+  
+  .circle:nth-child(3) {
+    width: 150px !important;
+    height: 150px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-wrapper {
+    padding: 10px;
+  }
+  
+  .login-layout {
+    border-radius: 15px;
+  }
+  
+  .logo-section {
+    padding: 1.5rem;
+  }
+  
+  .logo-image {
+    width: 160px;
+  }
+  
+  .form-section {
+    padding: 1.5rem;
+  }
+  
+  .welcome-section h2 {
+    font-size: 1.3rem;
+  }
+  
+  .circle {
+    width: 80px !important;
+    height: 80px !important;
+  }
+  .spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+}

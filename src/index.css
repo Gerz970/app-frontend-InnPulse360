@@ -1,68 +1,90 @@
+/* src/index.css */
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --navbar-width-expanded: 280px;
+  --navbar-width-collapsed: 80px;
+  --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+/* Estilos globales para el layout con navbar */
+.main-content {
+  margin-left: var(--navbar-width-expanded);
+  transition: margin-left 0.3s var(--transition-smooth);
+  min-height: 100vh;
+  background: #f8fafc;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+.main-content-collapsed {
+  margin-left: var(--navbar-width-collapsed);
+}
+
+/* Clase utilitaria para páginas que usan navbar */
+.page-with-navbar {
+  margin-left: var(--navbar-width-expanded);
+  transition: margin-left 0.3s var(--transition-smooth);
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.page-with-navbar-collapsed {
+  margin-left: var(--navbar-width-collapsed);
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+/* Contenedor principal para páginas */
+.page-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+/* Responsive */
+@media (max-width: 768px) {
+  .main-content,
+  .page-with-navbar,
+  .main-content-collapsed,
+  .page-with-navbar-collapsed {
+    margin-left: 0 !important;
   }
-  a:hover {
-    color: #747bff;
+  
+  .page-container {
+    padding: 1rem;
   }
-  button {
-    background-color: #f9f9f9;
+}
+@media (max-width: 480px) {
+  .welcome-header {
+    padding: 2rem 1rem;
   }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+.dashboard-layout,
+.main-content,
+.inicio-container,
+.welcome-header,
+.info-card,
+.card-content h3,
+.user-details p,
+.role-badge,
+.stat-item,
+.stat-number,
+.stat-label,
+.action-btn,
+.features-list,
+.features-list li,
+.welcome-message,
+.welcome-message h3,
+.welcome-message p {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Y luego todo tu CSS normal aquí... */
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
 }

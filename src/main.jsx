@@ -1,18 +1,14 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
+// src/main.jsx
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import { BrowserRouter } from 'react-router-dom' // ← IMPORTANTE
 import App from './App.jsx'
+import './index.css'
 
-import { registerSW } from 'virtual:pwa-register'
-
-registerSW({
-  onNeedRefresh() {},
-  onOfflineReady() {}
-})
-
-
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <BrowserRouter>  {/* ← ENVUELVE TU APP AQUÍ */}
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>,
 )
