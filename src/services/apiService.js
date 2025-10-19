@@ -1,5 +1,6 @@
 const API_BASE_URL = 'https://app-interface-innpulse360-production.up.railway.app/api/v1';
 
+
 export const authService = {
   login: async (login, password) => {
     try {

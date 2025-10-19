@@ -44,12 +44,10 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (username, password) => {
     try {
-      console.log('🔐 Intentando login...');
       const response = await authService.login(username, password);
-
       const accessToken = response.access_token;
 
-      // ✅ Obtener perfil real del usuario
+      // Obtener perfil real del usuario
       const profileResponse = await fetch('https://app-interface-innpulse360-production.up.railway.app/api/v1/usuarios/me/profile', {
         method: 'GET',
         headers: {
@@ -77,10 +75,8 @@ export const AuthProvider = ({ children }) => {
       localStorage.setItem('authToken', accessToken);
       localStorage.setItem('userData', JSON.stringify(userData));
 
-      console.log('✅ Login completo:', userData);
       return { success: true, data: userData };
     } catch (error) {
-      console.error('❌ Error en login:', error);
       let errorMessage = 'Error en el login';
       if (error.message.includes('NetworkError') || error.message.includes('Failed to fetch'))
         errorMessage = 'Error de conexión. Verifica tu internet.';
@@ -93,7 +89,6 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = () => {
-    console.log('🚪 Cerrando sesión...');
     setUser(null);
     setToken(null);
     localStorage.removeItem('authToken');

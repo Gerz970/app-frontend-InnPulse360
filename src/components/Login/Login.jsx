@@ -38,10 +38,6 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-
-    console.log('👤 Usuario ingresado:', username);
-    console.log('🔐 Password ingresado:', password);
-
     // Validaciones manuales
     if (!username.trim()) {
       showModal('Campo requerido', 'Por favor ingresa tu usuario', 'warning');

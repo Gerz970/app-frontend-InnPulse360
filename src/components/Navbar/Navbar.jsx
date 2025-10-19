@@ -52,7 +52,9 @@ const Navbar = ({ children }) => {
       { id: 'clients', name: 'Clientes', icon: '👥', path: '/admin/clients' },
       { id: 'reports', name: 'Reportes', icon: '📈', path: '/admin/reports' },
       { id: 'users', name: 'Usuarios', icon: '👤', path: '/admin/users' },
-      { id: 'settings', name: 'Configuración', icon: '⚙️', path: '/admin/settings' }
+      { id: 'settings', name: 'Configuración', icon: '⚙️', path: '/admin/settings' },
+      {id: 'gestionPuestos', name: 'Gestión Puestos', icon: '💼', path: '/admin/gestionPuestos'},
+      { id: 'gestionEmpleados', name: 'Gestión Empleados', icon: '🧑‍💼', path: '/admin/gestionEmpleados'}
     ],
     Recepcionista: [
       { id: 'dashboard', name: 'Dashboard', icon: '📊', path: '/empleado/dashboard' },
