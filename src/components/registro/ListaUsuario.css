@@ -1,0 +1,437 @@
+/* ===================== */
+/* Estilo principal para ListaUsuarios al estilo Navbar */
+/* ===================== */
+
+/* Contenedor Principal */
+.lista-usuarios-container {
+    padding: 30px;
+    background-color: #f8fafc;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.lista-usuarios-container h1 {
+    color: #1f2937;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 15px;
+}
+
+/* Barra de Acciones */
+.acciones-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* Botón Crear Usuario */
+.btn-primary {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-primary:hover {
+    background-color: #2563eb;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(59, 130, 246, 0.3);
+}
+
+/* Barra de Búsqueda */
+.search-bar {
+    display: flex;
+    align-items: center;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 0 12px;
+    width: 100%;
+    max-width: 350px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.search-bar i {
+    color: #6b7280;
+    margin-right: 8px;
+}
+
+.search-bar input {
+    flex-grow: 1;
+    padding: 10px 0;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 0.95rem;
+    color: #1f2937;
+}
+
+/* Tabla de Usuarios */
+.tabla-responsive {
+    overflow-x: auto;
+}
+
+.tabla-usuarios {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+    font-size: 0.95rem;
+}
+
+.tabla-usuarios th, 
+.tabla-usuarios td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.tabla-usuarios thead th {
+    background-color: #f3f4f6;
+    color: #374151;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    border-radius: 8px;
+}
+
+.tabla-usuarios tbody tr {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.tabla-usuarios tbody tr:hover {
+    background-color: #eff6ff;
+    transform: translateY(-2px);
+}
+
+/* Botones de Acción */
+.btn-accion {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 6px 10px;
+    margin-left: 5px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.btn-modificar {
+    color: #3b82f6;
+}
+
+.btn-modificar:hover {
+    background-color: rgba(59, 130, 246, 0.1);
+}
+
+.btn-eliminar {
+    color: #dc2626;
+}
+
+.btn-eliminar:hover {
+    background-color: rgba(220, 53, 69, 0.1);
+}
+
+/* Mensaje de no resultados */
+.no-results {
+    text-align: center;
+    padding: 30px;
+    color: #6b7280;
+    font-size: 1rem;
+}
+
+/* ===================== */
+/* Responsive y tarjetas móviles */
+/* ===================== */
+
+/* Tablets / pantallas medianas */
+@media (max-width: 992px) {
+    .acciones-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .btn-primary, .search-bar {
+        width: 100%;
+    }
+
+    .tabla-usuarios th, .tabla-usuarios td {
+        padding: 10px;
+        font-size: 0.85rem;
+    }
+}
+
+/* Móviles */
+@media (max-width: 576px) {
+    .lista-usuarios-container {
+        padding: 15px;
+    }
+
+    .tabla-usuarios thead {
+        display: none; /* Ocultar encabezado */
+    }
+
+    .tabla-usuarios tbody tr {
+        display: flex;
+        flex-direction: column;
+        padding: 12px 15px;
+        margin-bottom: 12px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .tabla-usuarios tbody td {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 0;
+        font-size: 0.85rem;
+        border-bottom: 1px solid #f0f2f5;
+    }
+
+    .btn-accion {
+        font-size: 0.85rem;
+        padding: 5px 8px;
+        margin-left: 0;
+    }
+}
+
+/* Muy pequeños */
+@media (max-width: 400px) {
+    .btn-primary {
+        padding: 8px 10px;
+        font-size: 0.85rem;
+    }
+
+    .tabla-usuarios tbody td {
+        flex-direction: column;
+        gap: 4px;
+    }
+}
+
+
+
+.lista-usuarios-container {
+  padding: 20px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.acciones-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  align-items: center;
+}
+
+.btn-primary {
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.btn-primary:hover {
+  background-color: #0b5ed7;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.search-bar input {
+  padding: 5px 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.tabla-usuarios {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-usuarios th, .tabla-usuarios td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.acciones-td button {
+  margin-right: 5px;
+  border: none;
+  padding: 5px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-modificar { background-color: #ffc107; color: white; }
+.btn-modificar:hover { background-color: #e0a800; }
+
+.btn-eliminar { background-color: #dc3545; color: white; }
+.btn-eliminar:hover { background-color: #b02a37; }
+
+.btn-roles { background-color: #6f42c1; color: white; }
+.btn-roles:hover { background-color: #5936a1; }
+
+.rol-tag {
+  background-color: #0d6efd;
+  color: white;
+  padding: 2px 6px;
+  margin: 0 2px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+.rol-tag-ninguno { color: #888; font-style: italic; }
+
+.no-results { text-align: center; font-style: italic; color: #666; }
+
+
+.fila-usuario {
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.fila-usuario:hover {
+  background-color: #eef3ff;
+  transform: translateY(-1px);
+}
+
+
+
+
+
+
+/* ==== Modal ==== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 15, 15, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-contenido {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 450px;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-cerrar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #555;
+  font-size: 1.2rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+.form-group input,
+.form-group select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.roles-asignados {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 0.5rem;
+}
+
+.rol-item {
+  background-color: #eef3ff;
+  border: 1px solid #d0d8ff;
+  padding: 5px 10px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-eliminar-rol {
+  background: transparent;
+  border: none;
+  color: #d33;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.acciones-modal {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btn-guardar {
+  background-color: #2b6cb0;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-cancelar {
+  background-color: #aaa;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

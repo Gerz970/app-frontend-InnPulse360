@@ -7,6 +7,9 @@ import InicioPage from '../pages/InicioPage/Inicio'; // ← CAMBIADO
 import Administrador from '../pages/Administrador/Administrador';
 import Clientes from '../pages/Clientes/Clientes';
 import Empleados from '../pages/Empleados/Empleados';
+import AdministracionUsuarios from '../pages/Registro/AdministracionUsuarios';
+import RegistroUsuario from '../pages/Registro/RegistroUsuario';
+
 
 const AppRouter = () => {
   const { isAuthenticated, user } = useAuth();
@@ -49,7 +52,8 @@ const AppRouter = () => {
           <ProtectedRoute allowedRoles={['Administrador']}>
             <Routes>
               <Route path="dashboard" element={<InicioPage />} /> {/* ← CAMBIADO */}
-              <Route path="users" element={<Administrador />} />
+              <Route path="users" element={<AdministracionUsuarios />} />
+               <Route path="usersR" element={<RegistroUsuario />} />
               <Route path="clients" element={<Clientes />} />
               <Route path="reservations" element={<div>Reservaciones Admin</div>} />
               <Route path="rooms" element={<div>Habitaciones Admin</div>} />

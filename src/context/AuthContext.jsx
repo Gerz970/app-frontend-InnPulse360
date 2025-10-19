@@ -50,7 +50,7 @@ export const AuthProvider = ({ children }) => {
       const accessToken = response.access_token;
 
       // ✅ Obtener perfil real del usuario
-      const profileResponse = await fetch('http://127.0.0.1:8000/api/v1/usuarios/me/profile', {
+      const profileResponse = await fetch('https://app-interface-innpulse360-production.up.railway.app/api/v1/usuarios/me/profile', {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${accessToken}`,

@@ -1,0 +1,22 @@
+/* pages/AdministracionUsuarios.css */
+
+.admin-page-container {
+    /* Padding general alrededor del contenido */
+    padding: 30px; 
+    /* Fondo del área de la aplicación, consistente con tu paleta */
+    background-color: #f4f6f9; 
+    min-height: 100vh;
+    width: 100%;
+    /* Centra la lista si la quieres en el medio de una pantalla muy grande */
+    display: flex;
+    justify-content: center;
+}
+
+.admin-page-container > div {
+    /* Limita el ancho máximo para que la tabla no sea interminable */
+    width: 100%;
+    max-width: 1400px; 
+}
+
+/* Si tu componente ListaUsuarios ya tiene sus propios estilos de tarjeta y sombra (como te sugerí), 
+   no necesitas mucho más en este archivo. */
